@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.toast_notification{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 450px;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    border-radius: 7px;
+    padding: 0 15px;
+    border-left: 5px solid #019F11;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    overflow: hidden;
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateX(calc(100% + 15px));
+}
+
+.toast_notification.active{
+    transform: translateX(0);
+}
+
+.toast_notification .close_icon{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.toast_notification .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    background-color: #019F11;
+    border-radius: 50px;
+}
+
+.toast_notification .icon i{
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.toast_notification .message h6{
+    font-family: Poppins;
+    font-size: 16px;
+}
+
+.toast_notification .message p{
+    font-family: Poppins;
+    font-size: 16px;
+}
+
+.toast_notification .progress{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF;
+}
+
+.toast_notification .progress:before{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #019F11;
+}
+
+.progress.active::before{
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100%{
+        right: 100%;
+    }
+}
+
+.apply{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    max-width: 100%;
+    margin: 100px auto;
+    font-family: Poppins;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #019F11;
+    color: #FFFFFF;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
